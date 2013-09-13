@@ -13,4 +13,4 @@ requirejs.config
     exclude: ['common']
     name: 'mainThree'
     exclude: ['common', 'mainTwo']
-  priority: ['application']
+  priority: ['common']
