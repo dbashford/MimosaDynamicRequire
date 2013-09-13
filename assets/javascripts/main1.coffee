@@ -6,5 +6,5 @@ require ['common'], ->
     """
 
     setTimeout ->
-      require ['main2']
+      require ['mainTwo']
     , 6000
