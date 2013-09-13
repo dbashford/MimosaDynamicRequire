@@ -2,10 +2,15 @@ exports.config =
   require:
     optimize :
       overrides: (runConfig) ->
-        runConfig.name = runConfig.include[0]
-        runConfig.insertRequire = null
-        runConfig.include = null
-        runConfig.out = runConfig.out.replace(/-built.js$/, ".js")
-        if runConfig.name is "main1"
-          runConfig.exclude = ["main2"]
+        runConfig.modules = [
+          {name: 'mainOne', exclude: ['common', 'mainTwo']}
+          {name: 'mainTwo', exclude: ['mainThree']}
+          {name: 'mainThree', exclude: []}
+        ]
+        runConfig.dir = "./public/javascripts"
+        runConfig.keepBuildDir = true
+        delete runConfig.insertRequire
+        delete runConfig.include
+        delete runConfig.out
+        delete runConfig.name
         runConfig
