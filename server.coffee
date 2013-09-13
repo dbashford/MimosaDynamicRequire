@@ -1,6 +1,7 @@
-express = require 'express'
-engines = require 'consolidate'
-routes  = require './routes'
+express =        require 'express'
+engines =        require 'consolidate'
+
+routes  =        require './routes'
 
 exports.startServer = (config, callback) ->
 
