@@ -1,5 +1,5 @@
 exports.config =
-  require:                 # configuration for requirejs options.
+  require:
     optimize :
       overrides: (runConfig) ->
         runConfig.name = runConfig.include[0]
@@ -8,6 +8,4 @@ exports.config =
         runConfig.out = runConfig.out.replace(/-built.js$/, ".js")
         if runConfig.name is "main1"
           runConfig.exclude = ["main2"]
-
-        # now return the runConfig. Any changes will be passed along to optimization
         runConfig
