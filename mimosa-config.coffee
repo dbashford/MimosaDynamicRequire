@@ -3,9 +3,10 @@ exports.config =
     optimize :
       overrides: (runConfig) ->
         runConfig.modules = [
+          {name: 'common', include: ['jquery']}
           {name: 'mainOne', exclude: ['common', 'mainTwo']}
-          {name: 'mainTwo', exclude: ['mainThree']}
-          {name: 'mainThree', exclude: []}
+          {name: 'mainTwo', exclude: ['common', 'mainThree']}
+          {name: 'mainThree', exclude: ['common']}
         ]
         runConfig.dir = "./public/javascripts"
         runConfig.keepBuildDir = true
