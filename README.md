@@ -27,21 +27,3 @@ Now, shut down the server.
 7. Navigate to https://localhost:3000 when the build finishes.
 
 Nothing changes from a UI perspective, but now the application has been r.js optimized into the 4 dynamic modules with no code duplication between those modules.
-
-Configuration
--------------
-
-Note that the only configuration necessary is to configure the modules themselves, Mimosa handles all the rest.
-
-```coffeescript
-exports.config =
-  minMimosaVersion:"1.0.0"
-  require:
-    optimize :
-      modules: [
-        {name: 'common', include: ['jquery']}
-        {name: 'mainOne', exclude: ['common', 'mainTwo']}
-        {name: 'mainTwo', exclude: ['common', 'mainThree']}
-        {name: 'mainThree', exclude: ['common']}
-      ]
-```
