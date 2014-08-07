@@ -5,3 +5,4 @@ requirejs.config
     mainOne: "main1"
     mainTwo: "main2"
     mainThree: "main3"
+    
