@@ -10,7 +10,8 @@ exports.config = {
     'live-reload',
     'stylus',
     'copy',
-    'coffeescript'],
+    'coffeescript',
+    'require'],
   require: {
     optimize : {
       modules: [
